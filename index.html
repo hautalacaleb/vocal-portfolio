@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caleb Hautala | Singing & Voice Acting Portfolio</title>
+    <style>
+        /* ---------- GENERAL STYLING ---------- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: linear-gradient(180deg, #ff9a76, #fbc687, #f6e7cb);
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff6b6b, #ffb88c);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.3rem;
+        }
+
+        section {
+            padding: 3rem 10%;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* ---------- PROFILE PICTURE ---------- */
+        .profile-picture {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .profile-picture img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        /* ---------- AUDIO SECTION ---------- */
+        .audio-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+            margin-top: 2rem;
+        }
+
+        .audio-card {
+            background: rgba(255,255,255,0.8);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+
+        .audio-card:hover {
+            transform: scale(1.05);
+        }
+
+        audio {
+            width: 100%;
+            outline: none;
+        }
+
+                /* ---------- AUDIO CATEGORY STYLING ---------- */
+        .audio-category {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+                /* ---------- ABOUT CATEGORY STYLING ---------- */
+        .about-category {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* Add soft gradient divider for each subsection */
+        .about-category::before {
+            content: "";
+            display: block;
+            height: 6px;
+            width: 60%;
+            margin: 0 auto 1.5rem;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #fbc687, #f6e7cb);
+        }
+
+        .about-category .category-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-category .category-description {
+            text-align: center;
+            color: #5c5c5c;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+        }
+
+        .about-category.journey {
+            background: linear-gradient(180deg, rgba(255,235,220,0.7), rgba(255,255,255,0.8));
+        }
+
+        .about-category.pastimes {
+            background: linear-gradient(180deg, rgba(255,210,180,0.7), rgba(255,255,255,0.8));
+        }
+
+        /* Keep your pastime item styling consistent */
+        .pastime-item {
+            text-align: center;
+        }
+
+        .pastime-item h4 {
+            margin-bottom: 0.5rem;
+            color: #ff6b35;
+        }
+
+
+        /* Gradient dividers for warmth and separation */
+        .audio-category::before {
+            content: "";
+            display: block;
+            height: 6px;
+            width: 60%;
+            margin: 0 auto 1.5rem;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #fbc687, #f6e7cb);
+        }
+
+        .category-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-description {
+            text-align: center;
+            color: #5c5c5c;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .song-title {
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 0.8rem;
+        }
+
+        .original-artist {
+            margin-top: 0.8rem;
+            font-style: italic;
+            color: #444;
+        }
+
+        .audio-category.covers {
+            background: linear-gradient(180deg, rgba(255,235,220,0.7), rgba(255,255,255,0.8));
+        }
+
+        .audio-category.originals {
+            background: linear-gradient(180deg, rgba(255,210,180,0.7), rgba(255,255,255,0.8));
+        }
+
+        .audio-category.voice-acting {
+            background: linear-gradient(180deg, rgba(255,180,140,0.7), rgba(255,255,255,0.8));
+        }
+
+        .audio-section.single {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        /* ---------- ABOUT ME ---------- */
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .about-section {
+            background: rgba(255,255,255,0.9);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .pastimes-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .pastimes-gallery img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+        .pastimes-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .pastime-item {
+            text-align: center;
+        }
+
+        .pastime-item h4 {
+            margin-bottom: 0.5rem;
+            color: #ff6b35;
+        }
+
+        /* ---------- CONTACT ---------- */
+        .contact {
+            text-align: center;
+            background: linear-gradient(90deg, #fba07c, #fbc687);
+            padding: 2rem;
+            color: #2c2c2c;
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+        }
+
+        .contact a {
+            color: #ff6b35;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact a:hover {
+            color: #ff2e00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            background: #fff3e6;
+            color: #5c5c5c;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+    <h1>Caleb Hautala</h1>
+    <p>Singer • Voice Actor • Songwriter</p>
+
+    <div class="profile-picture">
+        <!-- Replace "profile.jpg" with the actual name of your image file -->
+        <img src="Portfolio Media/Shure SM7B.jpg" alt="Caleb Hautala Profile Picture">
+    </div>
+</header>
+
+    <section id="audio">
+    <h2>Listen to My Work</h2>
+
+    <!-- ===== COVERS SECTION ===== -->
+    <div class="audio-category covers">
+        <h3 class="category-title">🎵 Covers</h3>
+        <p class="category-description">Singing to karaoke versions of songs I love</p>
+        <div class="audio-section">
+            <div class="audio-card">
+                <h4 class="song-title">Music Box of Fate</h4>
+                <audio controls>
+                    <source src="Portfolio Media/Music Box of Fate Karaoke.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p class="original-artist">Originally by Ironmouse, StarlightDaryl, WUNDER RiKU</p>
+            </div>
+            <div class="audio-card">
+                <h4 class="song-title">Wayfaring Stranger</h4>
+                <audio controls>
+                    <source src="Portfolio Media/Wayfaring Stranger Karaoke.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                <p class="original-artist">Originally by Johnny Cash</p>
+            </div>
+            <div class="audio-card">
+                <h4 class="song-title">HOPE</h4>
+                <audio controls>
+                    <source src="Portfolio Media/Hope Karaoke.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p class="original-artist">Originally by NF</p>
+            </div>
+            <div class="audio-card">
+                <h4 class="song-title">Guns for Hire</h4>
+                <audio controls>
+                    <source src="Portfolio Media/Guns For Hire Karaoke.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p class="original-artist">Originally by Woodkid</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ORIGINALS SECTION ===== -->
+    <div class="audio-category originals">
+        <h3 class="category-title">🌅 Originals</h3>
+        <p class="category-description">My own compositions and creative projects.</p>
+        <div class="audio-section single">
+            <div class="audio-card">
+                <h4 class="song-title">The Last Goodbye</h4>
+                <audio controls>
+                    <source src="Portfolio Media/The Last Goodbye.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p class="original-artist">Vocals by Caleb Hautala, Piano by Richard Hautala
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== VOICE ACTING SECTION ===== -->
+    <div class="audio-category voice-acting">
+        <h3 class="category-title">🎙️ Voice Acting</h3>
+        <p class="category-description">Samples from my character and narrative performances.</p>
+        <div class="audio-section">
+            <div class="audio-card">
+                <h4 class="song-title">Jack's Lament Cover</h4>
+                <audio controls>
+                    <source src="Portfolio Media/Jack's Lament Karaoke.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p class="original-artist">From The Nightmare Before Christmas</p>
+            </div>
+            <div class="audio-card">
+                <h4 class="song-title">Audio Recording of Mercenaries</h4>
+                <audio controls>
+                    <source src="Portfolio Media/Mercenaries Audio.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p class="original-artist">Personal project</p>
+            </div>
+        </div>
+    </div>
+</section>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+    <h2>About Me</h2>
+
+    <!-- ===== MY MUSICAL JOURNEY ===== -->
+    <div class="about-category journey">
+        <h3 class="category-title">🎶 My Musical Journey</h3>
+        <p class="category-description">
+            How I discovered my passion for singing and vocal work!
+        </p>
+
+        <div class="about-content">
+            <p>
+                My musical journey is an interesting one because it actually started relatively recently. My whole life I never thought I was a creative person and focused most of my 
+                attention on learning academic skills or job specific skills. I bounced around between many different fields; from the military, to container unloading, to a dental 
+                lab making dentures and many different personal projects. I never stayed in one field very long and was never able to find my passion. Until about just under 2 years ago 
+                I fell in love with singing. It brought so much freedom to just fall into the emotions of a song and belt your heart out. Since then it has been almost my sole focus and 
+                I have put everything I have into improving. Taking the technical and academic style of learning skills I have forged in my life and combining them with the endless 
+                creativity of singing and vocal work to build up my skillset and get to where I am today. 
+            </p>
+            <p>
+                This is a never ending journey of course. Every day I am tackling new challenges and learning new or improving current vocal techniques, allowing me to breathe new life and emotion into the 
+                songs I sing or characters I portray.
+            </p>
+        </div>
+    </div>
+
+    <!-- ===== FAVOURITE PASTIMES ===== -->
+    <div class="about-category pastimes">
+        <h3 class="category-title">🌇 Favourite Pastimes</h3>
+        <p class="category-description">
+            What I love doing in my free time!
+        </p>
+
+        <div class="about-content">
+            <p>
+                When I am not doing any recording, I love spending my free time singing karaoke, playing video games, hanging out with friends and family, and baking.
+            </p>
+
+            <div class="pastimes-gallery">
+                <div class="pastime-item">
+                    <h4>Karaoke Nights</h4>
+                    <img src="Portfolio Media/Karaoke in VRChat.png" alt="Singing Karaoke">
+                </div>
+                <div class="pastime-item">
+                    <h4>Gaming Adventures</h4>
+                    <img src="Portfolio Media/Halo 3.jpg" alt="Playing Video Games">
+                </div>
+                <div class="pastime-item">
+                    <h4>Family & Friends</h4>
+                    <img src="Portfolio Media/Family Photo.jpg" alt="Hanging Out with Friends and Family">
+                </div>
+                <div class="pastime-item">
+                    <h4>Baking Creations</h4>
+                    <img src="Portfolio Media/Cream Puffs.jpg" alt="Baking">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <div class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>If you’d like to collaborate, learn more about my work, or have any business inquiries, please feel free to reach out via email:</p>
+        <p><a href="mailto:hautalacaleb@gmail.com">hautalacaleb@gmail.com</a></p>
+    </div>
+
+    <footer>
+        <p>© 2025 Caleb Hautala. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
